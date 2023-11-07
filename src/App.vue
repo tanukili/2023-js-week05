@@ -191,7 +191,7 @@ export default {
           <span class="text-secondary">本次搜尋共 6 筆資料</span>
         </div>
       </div>
-      <div class="row">
+      <div class="row card-list">
         <PackageCard />
       </div>
     </div>
