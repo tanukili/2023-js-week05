@@ -53,9 +53,16 @@ export default {
   },
   methods: {
     // 渲染方法
-    render() {
+    render(nowArea = '全部地區') {
       let cardsHtml = '';
-      this.data.forEach((e) => {
+      let renderData = [];
+      // 新增地區判斷
+      if (nowArea !== '全部地區') {
+        renderData = this.data.filter((e) => e.area === nowArea);
+      } else {
+        renderData = this.data;
+      }
+      renderData.forEach((e) => {
         const template = `
         <div class="col-4">
           <div class="card shadow border-gray-300 h-100"">
@@ -107,6 +114,9 @@ export default {
         cardsHtml += template;
       });
       document.querySelector('.card-list').innerHTML = cardsHtml;
+      // 渲染篩選筆數
+      const filterNum = document.querySelector('#filterNum');
+      filterNum.textContent = `本次搜尋共 ${renderData.length} 筆資料`;
     },
   },
   mounted() {
@@ -115,6 +125,7 @@ export default {
     // 取 DON
     const form = document.querySelector('form');
     const submitBtn = document.querySelector('#submit');
+    const areaFilter = document.querySelector('#areaFilter');
     // 監聽按鈕
     submitBtn.addEventListener('click', () => {
       window.event.preventDefault();
@@ -124,6 +135,11 @@ export default {
       this.newPackage.id = this.data.length;
       this.data.push({ ...this.newPackage });
       this.render();
+    });
+    // 監聽下拉選單
+    areaFilter.addEventListener('change', (e) => {
+      this.render(e.target.value);
+      console.log(e.target.value);
     });
   },
 };
@@ -321,7 +337,7 @@ export default {
           </div>
         </div>
         <div class="col-2">
-          <span class="text-secondary">本次搜尋共 6 筆資料</span>
+          <span class="text-secondary" id="filterNum"></span>
         </div>
       </div>
       <div class="row card-list gy-5"></div>
