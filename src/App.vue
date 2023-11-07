@@ -64,7 +64,7 @@ export default {
       }
       renderData.forEach((e) => {
         const template = `
-        <div class="col-4">
+        <div class=" col-xl-4">
           <div class="card shadow border-gray-300 h-100"">
             <div class="position-relative">
               <img
@@ -150,11 +150,11 @@ export default {
       <div class="col-10">
         <div class="shadow rounded-1" style="padding: 60px 0">
           <div class="row justify-content-center">
-            <div class="col-5 w-40">
-              <img src="/main_img.png" alt="主視覺" class="img-fluid" />
-              <h1 class="logo mb-0">Let's Travel!</h1>
+            <div class="col-5 w-40 d-none d-lg-block">
+              <img src="/main_img.png" alt="主視覺" class="img-fluid pb-3" />
+              <h1 class="logo mb-0 mt-1">Let's Travel!</h1>
             </div>
-            <div class="col-5 w-40">
+            <div class="col-10 col-lg-5 w-md-40">
               <div class="text-primary">
                 <h2
                   class="border-bottom border-3 fs-4 fw-bold pb-1 d-flex align-items-center"
@@ -165,14 +165,14 @@ export default {
                 </h2>
                 <form action="#">
                   <div class="row align-items-center pt-3">
-                    <div class="col-3">
+                    <div class="col-xl-3">
                       <label
                         for="packageName"
                         class="col-form-label fw-medium text-primary"
                         >套票名稱</label
                       >
                     </div>
-                    <div class="col-9">
+                    <div class="col-xl-9">
                       <input
                         type="text"
                         name="name"
@@ -183,14 +183,14 @@ export default {
                     </div>
                   </div>
                   <div class="row align-items-center pt-4">
-                    <div class="col-3">
+                    <div class="col-xl-3">
                       <label
                         for="packageUrl"
                         class="col-form-label fw-medium text-primary"
                         >圖片網址</label
                       >
                     </div>
-                    <div class="col-9">
+                    <div class="col-xl-9">
                       <input
                         type="url"
                         name="imgUrl"
@@ -201,14 +201,14 @@ export default {
                     </div>
                   </div>
                   <div class="row align-items-center pt-4">
-                    <div class="col-3">
+                    <div class="col-xl-3">
                       <label
                         for="packArea"
                         class="col-form-label fw-medium text-primary"
                         >景點地區</label
                       >
                     </div>
-                    <div class="col-9 select-icon position-relative">
+                    <div class="col-xl-9 select-icon position-relative">
                       <select
                         id="packArea"
                         name="area"
@@ -222,14 +222,14 @@ export default {
                     </div>
                   </div>
                   <div class="row align-items-center pt-4">
-                    <div class="col-3">
+                    <div class="col-xl-3">
                       <label
                         for="packagePrice"
                         class="col-form-label fw-medium text-primary"
                         >套票金額</label
                       >
                     </div>
-                    <div class="col-9">
+                    <div class="col-xl-9">
                       <input
                         type="number"
                         name="price"
@@ -241,14 +241,14 @@ export default {
                     </div>
                   </div>
                   <div class="row align-items-center pt-4">
-                    <div class="col-3">
+                    <div class="col-xl-3">
                       <label
                         for="packageNum"
                         class="col-form-label fw-medium text-primary"
                         >套票組數</label
                       >
                     </div>
-                    <div class="col-9">
+                    <div class="col-xl-9">
                       <input
                         type="number"
                         name="group"
@@ -260,14 +260,14 @@ export default {
                     </div>
                   </div>
                   <div class="row align-items-center pt-4">
-                    <div class="col-3">
+                    <div class="col-xl-3">
                       <label
                         for="packageStarts"
                         class="col-form-label fw-medium text-primary"
                         >套票星級</label
                       >
                     </div>
-                    <div class="col-9">
+                    <div class="col-xl-9">
                       <input
                         type="number"
                         name="rate"
@@ -280,14 +280,14 @@ export default {
                     </div>
                   </div>
                   <div class="row pt-4">
-                    <div class="col-3">
+                    <div class="col-xl-3">
                       <label
                         for="packageDescribe"
                         class="col-form-label fw-medium text-primary"
                         >套票描述</label
                       >
                     </div>
-                    <div class="col-9">
+                    <div class="col-xl-9">
                       <textarea
                         class="form-control border-bottom rounded-top-1"
                         name="description"
@@ -298,7 +298,7 @@ export default {
                     </div>
                   </div>
                   <div class="row">
-                    <div class="col-6 ms-auto">
+                    <div class="col-sm-6 ms-auto">
                       <button
                         type="submit"
                         id="submit"
@@ -319,9 +319,9 @@ export default {
   <div class="bg-gray-200">
     <div class="container" style="padding-bottom: 120px">
       <div class="row align-items-center py-5 mb-2">
-        <div class="col-4">
+        <div class="col-6 col-xl-4">
           <div class="row justify-content-end mt-1">
-            <div class="col-9 select-icon position-relative">
+            <div class="col col-xl-9 select-icon position-relative">
               <select
                 class="form-select bg-white border border-gray-500 rounded-1"
                 id="areaFilter"
@@ -335,7 +335,7 @@ export default {
             </div>
           </div>
         </div>
-        <div class="col-2">
+        <div class="col-6 col-md-3">
           <span class="text-secondary" id="filterNum"></span>
         </div>
       </div>
@@ -359,8 +359,8 @@ export default {
   background-size: cover;
   background-position: center;
 }
-.w-40 {
-  width: 40% !important;
+.w-md-40 {
+  @media (min-width: 992px) width: 40% !important;
 }
 .select-icon::before,
 .select-icon::after {
