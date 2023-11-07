@@ -139,7 +139,6 @@ export default {
     // 監聽下拉選單
     areaFilter.addEventListener('change', (e) => {
       this.render(e.target.value);
-      console.log(e.target.value);
     });
   },
 };
