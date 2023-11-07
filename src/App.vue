@@ -142,13 +142,13 @@ export default {
                       >
                     </div>
                     <div class="col-9">
-                      <input
-                        type="text"
-                        id="packageDescribe"
+                      <textarea
                         class="form-control border-bottom rounded-top-1"
+                        name="packageDescribe"
+                        id="packageDescribe"
                         style="padding-bottom: 89px"
                         placeholder="請填寫套票描述（限 100 字）"
-                      />
+                      ></textarea>
                     </div>
                   </div>
                   <div class="row">
